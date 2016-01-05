@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>API Basejump - Image Search</title>
+    <style>
+        .imglink {
+            float: left;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            padding: 5px;
+        }
+        .imglink img {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="header">API Basejump: Image Search</h1>
+    <p>By Rex "SaintPeter" Schrader |
+        <a href="https://github.com/SaintPeter/basejump-image-search">Project GitHub</a></p>
+    <blockquote>User Stories:
+        <ol>
+            <li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+            <li>I can paginate through the responses by adding a /2 parameter to the URL.</li>
+            <li>I can get a list of the most recently submitted search strings.</li>
+        </ol>
+    </blockquote>
+    <h2>Example usage:</h2>
+    <code>https://saintpeter-image-search.herokuapp.com/search/funny%20cats</code><br>
+    <code>https://saintpeter-image-search.herokuapp.com/search/funny%20cats/2</code><br>
+    <code>https://saintpeter-image-search.herokuapp.com/recent/</code>
+    <h2>Example output:</h2>
+    <form class="form">
+        <div class="form-group">
+            <input type="text" id="search" class="form-control" placeholder="funny cats">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" id="searchBtn">Image Search</button>
+            <button class="btn btn-warning" id="clearBtn">Clear</button>
+            <button class="btn btn-info" id="recentBtn">Recent Searches</button>
+        </div>
+    </form>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="text-center">
+                <button id="prev" class="btn btn-info pull-left">&lt; Prev</button>
+                Results
+                <button id="next" class="btn btn-info pull-right">Next &gt;</button>
+            </h3>
+        </div>
+        <div class="panel-body" id="results">
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</div>
+</body>
+</html>
