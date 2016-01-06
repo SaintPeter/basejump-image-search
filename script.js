@@ -57,7 +57,7 @@ document.getElementById('recentBtn').addEventListener('click', function(e) {
     if (request.status >= 200 && request.status < 400) {
       var data = JSON.parse(request.responseText);
       var output = data.reduce(function(acc, curr){
-        return acc + ``;
+        return acc + `<tr><td>${curr.term}</td><td>${curr.page}</td><td>${curr.date}</td></tr></tr>`;
       }, "");
       console.log("Got Recent Request");
     } else {

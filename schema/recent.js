@@ -1,3 +1,11 @@
-/**
- * Created by Rex on 1/3/2016.
- */
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
+
+var recentSchema = new Schema({
+  term: String,
+  date: {type:Date, default:Date.now},
+  page: Number,
+  cache: []
+});
+
+module.exports = mongoose.model('recent', recentSchema);
