@@ -4,7 +4,7 @@ var app = server();
 var fs = require('fs');
 var path = require('path');
 var request = require('request');
-require('dotenv').load();
+require('dotenv').config({silent: true});
 
 // Connect to database
 var mongoose = require('mongoose');
